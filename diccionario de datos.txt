@@ -1,0 +1,70 @@
+Diccionario de Datos
+
+Entidad: Cliente
+
+ID_Cliente: Integer, clave primaria. Identificador único para cada cliente.
+Nombre: String. Nombre del cliente.
+Apellido: String. Apellido del cliente.
+
+Entidad: Direccion
+
+ID_Direccion: Integer, clave primaria. Identificador único para cada dirección.
+Calle: String. Nombre de la calle o avenida.
+Numero: Integer. Número de la dirección.
+ID_Cliente: Integer, clave foránea. Referencia al cliente asociado a esta dirección.
+ID_Comuna: Integer, clave foránea. Referencia a la comuna de la dirección.
+
+Entidad: Comuna
+
+ID_Comuna: Integer, clave primaria. Identificador único para cada comuna.
+Nombre: String. Nombre de la comuna.
+ID_Region: Integer, clave foránea. Referencia a la región a la que pertenece la comuna.
+
+Entidad: Region
+
+ID_Region: Integer, clave primaria. Identificador único para cada región.
+Nombre: String. Nombre de la región.
+
+Entidad: Compañia
+
+ID_Compañia: Integer, clave primaria. Identificador único para cada compañía.
+ID_Comuna: Integer, clave foránea. Identificador de la comuna donde se encuentra la compañia.
+Nombre: String. Nombre de la compañía.
+
+Entidad: Producto
+
+ID_Producto: Integer, clave primaria. Identificador único para cada producto.
+Descripcion: String. Descripción o nombre del producto.
+Valor: float. Valor del producto.
+ID_Compañia: Integer, clave foránea. Referencia a la compañía que ofrece el producto.
+
+Entidad: Venta_Detalle
+
+ID_Venta: Integer, clave primaria. Identificador único para cada venta.
+Cantidad: Integer. Cantidad de productos en la venta.
+ID_Producto: Integer, clave foránea. Referencia al producto vendido.
+ID_Precio: Integer, clave foránea. Referencia al precio del producto.
+ID_Pedido: Integer, clave foránea. Referencia al pedido.
+
+Entidad: Precio
+
+ID_Precio: Integer, clave primaria. Identificador único para cada precio.
+Valor: Float. Valor del producto.
+
+Entidad: Pedido
+
+ID_Pedido: Integer, clave primaria. Identificador único para cada pedido.
+Fecha: Date. Fecha en que se realizó el pedido.
+ID_Cliente: Integer, clave foránea. Referencia al cliente que realizó el pedido.
+ID_Repartidor: Integer, clave foránea. Referencia al repartidor asignado al pedido.
+
+Entidad: Repartidor
+
+ID_Repartidor: Integer, clave primaria. Identificador único para cada repartidor.
+Nombre: String. Nombre del repartidor.
+ID_Medio_Transporte: Integer, clave foránea. Referencia al medio de transporte que utiliza el repartidor.
+
+Entidad: Medio_Transporte
+
+ID_Medio: Integer, clave primaria. Identificador único para cada medio de transporte.
+Tipo: String. Tipo de medio de transporte (BICICLETA, AUTO, MOTO).
